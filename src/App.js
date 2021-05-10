@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Input from "./components/Input";
+import Output from "./components/Output";
+import Card from "./components/UI/Card";
+
+import logo from "./logo.svg";
+import "./App.css";
+
+const data = [
+  { name: "Max", iceCreams: 3, id: 1 },
+  { name: "Jost", iceCreams: 2, id: 2 },
+  { name: "Engo", iceCreams: 5, id: 3 },
+];
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Hello User! 👋🏼 </p>
+        <p>This is an Ice-cream tracker 🍦!</p>
       </header>
+      <main className="App-main">
+        <Card>
+          <Input />
+        </Card>
+        <Card>
+          <Output outputData={data} />
+        </Card>
+      </main>
     </div>
   );
 }
