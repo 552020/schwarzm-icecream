@@ -6,13 +6,21 @@ import Card from "./components/UI/Card";
 import logo from "./logo.svg";
 import "./App.css";
 
-const data = [
+const DUMMY_DATA = [
   { name: "Max", iceCreams: 3, id: 1 },
   { name: "Jost", iceCreams: 2, id: 2 },
   { name: "Engo", iceCreams: 5, id: 3 },
 ];
 
 function App() {
+  const [data, setData] = useState(DUMMY_DATA);
+
+  const AddInputHandler = (userData) => {
+    setData((prevData) => {
+      console.log(userData);
+      return [userData, ...prevData];
+    });
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -22,7 +30,7 @@ function App() {
       </header>
       <main className="App-main">
         <Card>
-          <Input />
+          <Input onAddInput={AddInputHandler} />
         </Card>
         <Card>
           <Output outputData={data} />

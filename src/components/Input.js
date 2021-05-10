@@ -1,13 +1,14 @@
 import React from "react";
 import InputForm from "./InputForm";
 
-const Input = () => {
-  const saveEnteredDataHandler = (enteredData) => {
+const Input = (props) => {
+  const saveEnteredDataHandler = (iceCreamData) => {
     const data = {
-      ...enteredData,
+      ...iceCreamData,
       id: Math.random().toString(),
     };
-    console.log(enteredData);
+
+    props.onAddInput(data);
   };
 
   return (
