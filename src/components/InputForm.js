@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "./InputForm.css";
 
-const [enteredName, setEnteredName] = useState("");
-const [enteredNumber, setEnteredNumber] = useState("0");
-
 const nameChangeHandler = (event) => {
   console.log(event.target.value);
   setEnteredName(event.target.value);
@@ -15,6 +12,8 @@ const numberChangeHandler = (ereignis) => {
 };
 
 const InputForm = () => {
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredNumber, setEnteredNumber] = useState("0");
   return (
     <form className="form">
       {/* <p>Check if applies:</p>
@@ -28,7 +27,12 @@ const InputForm = () => {
       <br /> 
       <p>Fill out:</p> <br />*/}
       <label htmlFor="name">What's your name? </label>
-      <input type="text" id="name" onChange={nameChangeHandler} />
+      <input
+        type="text"
+        id="name"
+        onChange={nameChangeHandler}
+        value={enteredName}
+      />
       <br />
       <label htmlFor="ice-cream-number">
         How many ice-cream did you eat yesterday?{" "}
@@ -37,6 +41,7 @@ const InputForm = () => {
         type="number"
         id="ice-cream-number"
         onChange={numberChangeHandler}
+        value={enteredNumber}
       />{" "}
       <br />
       <input type="submit" />
