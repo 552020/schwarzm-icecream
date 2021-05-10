@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import "./InputForm.css";
 
-const InputForm = () => {
+const InputForm = (props) => {
   const [enteredName, setEnteredName] = useState("");
 
   const [enteredNumber, setEnteredNumber] = useState("0");
 
   const nameChangeHandler = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setEnteredName(event.target.value);
   };
 
   const numberChangeHandler = (ereignis) => {
-    console.log(ereignis.target.value);
+    // console.log(ereignis.target.value);
     setEnteredNumber(ereignis.target.value);
   };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log(event);
+
+    const iceCreamData = {
+      // iceCreamData is definded here
+      name: enteredName,
+      iceCreams: enteredNumber,
+    };
+
+    props.onSaveData(iceCreamData); // onSaveData is a prop of InputForm defined in the component in Input.js
+
+    setEnteredName("");
+    setEnteredNumber("");
+  };
   return (
-    <form className="form">
+    <form className="form" onSubmit={onSubmitHandler}>
       {/* <p>Check if applies:</p>
       <input type="checkbox" id="ice-yes-no" />
       <label htmlFor="ice-yes-no">I like ice creams.</label>
