@@ -6,10 +6,12 @@ const InputForm = () => {
     <form className="form">
       <p>Check if applies:</p>
       <input type="checkbox" id="ice-yes-no" />
-      <label htmlFor="ice-yes-no">I like ice-cream</label>
+      <label htmlFor="ice-yes-no">I like ice creams.</label>
       <br />
       <input type="checkbox" />
-      <label htmlFor="ice-everyday">I eat ice-cream everyday</label>
+      <label htmlFor="ice-everyday">
+        I eat ice creams everyday. At least one.
+      </label>
       <br />
       <p>Fill out:</p> <br />
       <label hrmlFor="name">What's your name? </label>

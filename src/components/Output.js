@@ -16,6 +16,7 @@ const Output = (props) => {
         {props.outputData[2].name} has eaten {props.outputData[2].iceCreams} ice
         creams.
       </p>
+      <button>Reset</button>
     </div>
   );
 };
