@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./InputForm.css";
 
-const nameChangeHandler = (event) => {
-  console.log(event.target.value);
-  setEnteredName(event.target.value);
-};
-
-const numberChangeHandler = (ereignis) => {
-  console.log(ereignis.target.value);
-  setEnteredNumber(ereignis.target.value);
-};
-
 const InputForm = () => {
   const [enteredName, setEnteredName] = useState("");
+
   const [enteredNumber, setEnteredNumber] = useState("0");
+
+  const nameChangeHandler = (event) => {
+    console.log(event.target.value);
+    setEnteredName(event.target.value);
+  };
+
+  const numberChangeHandler = (ereignis) => {
+    console.log(ereignis.target.value);
+    setEnteredNumber(ereignis.target.value);
+  };
   return (
     <form className="form">
       {/* <p>Check if applies:</p>
