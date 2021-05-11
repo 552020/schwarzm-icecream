@@ -4,7 +4,7 @@ import "./InputForm.css";
 const InputForm = (props) => {
   const [enteredName, setEnteredName] = useState("");
 
-  const [enteredNumber, setEnteredNumber] = useState("0");
+  const [enteredNumber, setEnteredNumber] = useState("");
 
   const nameChangeHandler = (event) => {
     // console.log(event.target.value);
@@ -42,7 +42,7 @@ const InputForm = (props) => {
         I eat ice creams everyday. At least one.
       </label>
       <br /> 
-      <p>Fill out:</p> <br />*/}
+      <p>Fill out:</p> <br />  */}
       <label htmlFor="name">What's your name? </label>
       <input
         type="text"
@@ -51,8 +51,9 @@ const InputForm = (props) => {
         value={enteredName}
       />
       <br />
+      <br />
       <label htmlFor="ice-cream-number">
-        How many ice-cream did you eat yesterday?{" "}
+        How many ice creams did you eat yesterday?{" "}
       </label>
       <input
         type="number"
@@ -61,9 +62,17 @@ const InputForm = (props) => {
         value={enteredNumber}
       />{" "}
       <br />
-      <input type="submit" />
+      <br />
+      <div className="btn-wrapper">
+        <button type="submit" className="btn">
+          <p>Send!🛸</p>
+        </button>
+      </div>
     </form>
   );
 };
 
 export default InputForm;
+
+// ** Regarding the commented-out checkboxes **
+// The idea is to add two preliminary chechboxes. If the user don't check them they can't submit the form or better would be a yes/no button

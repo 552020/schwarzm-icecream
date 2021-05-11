@@ -26,17 +26,22 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello User! 👋🏼 </p>
-        <p>This is an ice cream tracker 🍦!</p>
+        <Card>
+          <h1>Best Ice Cream Tracker! 🍦</h1>
+          <p>
+            Hello User! 👋🏼 Keep track of the ice creams you enjoyed yesterday
+            and compare your results with your friends!
+          </p>
+          <p></p>
+        </Card>
       </header>
-      <main className="App-main">
-        <Card>
-          <Input onAddInput={AddInputHandler} />
-        </Card>
-        <Card>
-          <Output outputData={data} />
-        </Card>
-      </main>
+
+      <Card>
+        <Input onAddInput={AddInputHandler} />
+      </Card>
+      <Card>
+        <Output outputData={data} />
+      </Card>
     </div>
   );
 }
