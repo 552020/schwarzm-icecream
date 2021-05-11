@@ -1,21 +1,19 @@
 import React from "react";
 
 const Output = (props) => {
+  const deleteItem = () => {};
   return (
     <div>
       <p>(... and I'm the output component!)</p>
-      <p>
-        {props.outputData[0].name} has eaten {props.outputData[0].iceCreams} ice
-        creams.
-      </p>
-      <p>
-        {props.outputData[1].name} has eaten {props.outputData[1].iceCreams} ice
-        creams.
-      </p>
-      <p>
-        {props.outputData[2].name} has eaten {props.outputData[2].iceCreams} ice
-        creams.
-      </p>
+      {props.outputData.map((element) => (
+        <div className="item">
+          <p>
+            {element.name} has eaten {element.iceCreams} ice creams!
+          </p>
+          <button onClick={deleteItem}></button>
+        </div>
+      ))}
+
       <button>Reset</button>
     </div>
   );
