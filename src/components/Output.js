@@ -2,7 +2,7 @@ import React from "react";
 import OutputItem from "./OutputItem";
 
 const Output = (props) => {
-  const deleteItem = () => {};
+  // const deleteItem = () => {};
   return (
     <div>
       {/* <p>(... and I'm the output component!)</p> */}
